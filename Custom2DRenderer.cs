@@ -4,10 +4,8 @@ using UnityEngine.Rendering.Universal.Internal;
 
 namespace UnityEngine.Experimental.Rendering.Universal
 {
-
     internal class Custom2DRenderer : ScriptableRenderer
     {
-
         ColorGradingLutPass m_ColorGradingLutPass;
         Render2DLightingPass m_Render2DLightingPass;
         PostProcessPass m_PostProcessPass;
@@ -55,7 +53,6 @@ namespace UnityEngine.Experimental.Rendering.Universal
             bool useOffscreenColorTexture =
                 ppcUsesOffscreenRT || postProcessEnabled || cameraData.isHdrEnabled || cameraData.isSceneViewCamera || !cameraData.isDefaultViewport || !m_UseDepthStencilBuffer;
 
-            //NEW SNIPPET FOR RENDERER FEATURES WORKAROUND WITH RENDERER2D, from: 
             for (int i = 0; i < rendererFeatures.Count; i++)
             {
 
@@ -182,6 +179,4 @@ namespace UnityEngine.Experimental.Rendering.Universal
                 cmd.ReleaseTemporaryRT(m_ColorTargetHandle.id);
         }
     }
-
 }
-
